@@ -16,3 +16,13 @@ class TextBoxLocators:
     CREATED_EMAIL = (By.CSS_SELECTOR, "#output #email")
     CREATED_CURRENT_ADDRESS = (By.CSS_SELECTOR, "#output #currentAddress")
     CREATED_PERMANENT_ADDRESS = (By.CSS_SELECTOR, "#output #permanentAddress")
+
+
+class CheckBoxPageLocators:
+
+    EXPAND_BUTTON = (By.CSS_SELECTOR, ".rc-tree-switcher.rc-tree-switcher_close")
+    ITEM_LIST = (By.CSS_SELECTOR, "span[class='rc-tree-checkbox']")
+    CHECKED_ITEMS = (By.CSS_SELECTOR, "[aria-checked='true']")
+    TITLE_ITEM = (By.XPATH, "./following-sibling::span")
+
+

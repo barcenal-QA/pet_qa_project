@@ -1,9 +1,10 @@
 import time
-
+import random
 from generator.generator import generated_person
 from locators.elements_page_locators import TextBoxLocators
 from pages.base_page import BasePage
-
+from locators.elements_page_locators import CheckBoxPageLocators
+from selenium.webdriver.common.by import By
 
 class TextBoxPage(BasePage):
     locators = TextBoxLocators()
@@ -28,3 +29,32 @@ class TextBoxPage(BasePage):
         current_address = self.element_is_present(self.locators.CREATED_CURRENT_ADDRESS).text.split(":")[1]
         permanent_address = self.element_is_present(self.locators.CREATED_PERMANENT_ADDRESS).text.split(":")[1]
         return full_name, email, current_address, permanent_address
+
+class CheckBoxPage(BasePage):
+    locators = CheckBoxPageLocators()
+
+    def open_full_list(self):
+        while True:
+            closed_items = self.find_elements(self.locators.EXPAND_BUTTON)
+            if not closed_items:
+                break
+            closed_items[0].click()
+
+            time.sleep(0.3)
+
+    def click_random_checkbox(self):
+        item_list = self.elements_are_visible(self.locators.ITEM_LIST)
+        random_items = random.sample(item_list, 5)
+
+        for item in random_items:
+            item.click()
+
+    def get_checked_checkbox(self):
+        checked_list = self.elements_are_present(self.locators.CHECKED_ITEMS)
+        data = []
+        for box in checked_list:
+            title_item = box.find_element(*self.locators.TITLE_ITEM)
+            print(title_item.text)
+            data.append(title_item.text)
+
+        return data
