@@ -58,3 +58,11 @@ class CheckBoxPage(BasePage):
             data.append(title_item.text)
 
         return data
+
+    def get_output_result(self):
+        result_list = self.elements_are_present(self.locators.OUTPUT_RESULT)
+        data = []
+        for item in result_list:
+            data.append(item.text)
+
+        return data

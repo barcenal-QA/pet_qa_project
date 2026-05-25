@@ -24,5 +24,7 @@ class CheckBoxPageLocators:
     ITEM_LIST = (By.CSS_SELECTOR, "span[class='rc-tree-checkbox']")
     CHECKED_ITEMS = (By.CSS_SELECTOR, "[aria-checked='true']")
     TITLE_ITEM = (By.XPATH, "./following-sibling::span")
+    OUTPUT_RESULT = (By.CSS_SELECTOR, "span[class='text-success']")
+
 
 
