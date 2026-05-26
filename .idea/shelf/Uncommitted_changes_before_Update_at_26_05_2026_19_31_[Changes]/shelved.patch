@@ -1,0 +1,15 @@
+Index: .GITIGNORE
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.GITIGNORE b/.GITIGNORE
+new file mode 100644
+--- /dev/null	(date 1779813106155)
++++ b/.GITIGNORE	(date 1779813106155)
+@@ -0,0 +1,5 @@
++
++# IDEs
++.idea/
++
++
