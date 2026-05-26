@@ -45,4 +45,3 @@ class TestElements:
 
             assert output_yes == 'Yes', "radio button 'Yes' isn`t selected"
             assert output_impressive == 'Impressive', "radio button 'Impressive' isn`t selected"
-
