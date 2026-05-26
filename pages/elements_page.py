@@ -53,7 +53,6 @@ class CheckBoxPage(BasePage):
         data = []
         for box in checked_list:
             title_item = box.find_element(*self.locators.TITLE_ITEM)
-            print(title_item.text)
             data.append(title_item.text)
 
         return data
